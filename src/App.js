@@ -1,13 +1,14 @@
-
 import styled from 'styled-components'
 import Header from "./components/Header";
 import GlobalStyles from "./GlobalStyle";
+import GistList from './components/GistList';
 
 const App = () => {
   return (
     <Wrapper className="App" data-testid="app">
-      <Header />
       <GlobalStyles />
+      <Header />
+      <GistList />
     </Wrapper>
   );
 }
