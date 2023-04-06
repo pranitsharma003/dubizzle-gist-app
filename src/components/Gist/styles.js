@@ -40,9 +40,10 @@ const AvatarImage = styled.img`
   border-radius: 50%;
 `;
 
-const UsernameContainer = styled.div`
+const UsernameContainer = styled.a`
   margin-left: 10px;
   color: ${appSchemeText};
+  text-decoration: none;
 `;
 
 const GistDescription = styled.div`
@@ -50,11 +51,12 @@ const GistDescription = styled.div`
   font-weight: 450;
 `;
 
-const FileListContainer = styled.div`
+const FileListContainer = styled.a`
   display: flex;
   align-items: center;
   color: ${appSchemeText};
   margin-left: 10px;
+  text-decoration: none;
 `;
 
 const FileListWrapper = styled.div`

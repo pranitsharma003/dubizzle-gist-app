@@ -50,7 +50,9 @@ const Gist = ({ gist }) => {
       <UserContainer>
         <ProfileContainer>
           <AvatarImage src={gist.owner.avatar_url} alt="Profile Image" />
-          <UsernameContainer>{gist.owner.login}</UsernameContainer>
+          <UsernameContainer href={gist.owner.url} target="_blank">
+            {gist.owner.login}
+          </UsernameContainer>
         </ProfileContainer>
         <ButtonContainer>
           {iconsArray.map((item) => {
@@ -77,7 +79,11 @@ const Gist = ({ gist }) => {
       <FileListWrapper>
         {Object.keys(gist.files).map((fileKey) => {
           return (
-            <FileListContainer key={fileKey}>
+            <FileListContainer
+              key={fileKey}
+              href={gist.files[fileKey].raw_url}
+              target="_blank"
+            >
               <GoFile />
               <FileListText key={fileKey}>
                 {gist.files[fileKey].filename}
