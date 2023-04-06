@@ -1,3 +1,3 @@
-import gistListSlice from "../reducers";
+import { gistListSlice } from "../reducers/gistList";
 
 export const { Save, GetList } = gistListSlice.actions;

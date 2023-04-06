@@ -4,7 +4,7 @@ import Gist from "../Gist";
 import dummyData from "../../dummy-data";
 import { Wrapper } from "./styles";
 import { useSelector, useDispatch } from "react-redux";
-import { Save, GetList } from "../../redux/reducers/gistList";
+import { Save, GetList } from "../../redux/actions/gistListActions";
 
 const GistList = () => {
   const dispatch = useDispatch();
