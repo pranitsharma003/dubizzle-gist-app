@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { appSchemeText } from "../../constants/styling-constants";
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,7 +35,7 @@ const AvatarImage = styled.img`
 
 const UsernameContainer = styled.div`
   margin-left: 10px;
-  color: rgb(10, 76, 205);
+  color: ${appSchemeText};
 `;
 
 export {

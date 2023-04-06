@@ -1,9 +1,10 @@
 import React from "react";
+import { ButtonText } from "./styles";
 
 const GistActionButton = ({ text }) => {
   return (
     <div>
-      <div>{text}</div>
+      <ButtonText>{text}</ButtonText>
     </div>
   );
 };
