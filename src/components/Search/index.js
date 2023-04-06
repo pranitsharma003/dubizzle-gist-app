@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Octicon from "react-octicon";
 import { useDispatch, useSelector } from "react-redux";
 import { Wrapper, InputBox, Input } from "./styles";

@@ -1,8 +1,16 @@
 import styled from "styled-components";
 import { appSchemeText } from "../../constants/styling-constants";
 
-const ButtonText = styled.div`
+const GistActionButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
   color: ${appSchemeText};
+  margin-left: 15px;
 `;
 
-export { ButtonText };
+const GistActionButtonText = styled.div`
+  margin-left: 5px;
+`;
+
+export { GistActionButtonContainer, GistActionButtonText };

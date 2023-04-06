@@ -26,6 +26,12 @@ const ButtonContainer = styled.div`
 const TimestampContainer = styled.div`
   display: flex;
   align-items: center;
+  font-size: 12px;
+  margin-top: 5px;
+`;
+
+const UpdatedDate = styled.div`
+  margin-left: 12px;
 `;
 
 const AvatarImage = styled.img`
@@ -39,6 +45,28 @@ const UsernameContainer = styled.div`
   color: ${appSchemeText};
 `;
 
+const GistDescription = styled.div`
+  margin-top: 15px;
+  font-weight: 450;
+`;
+
+const FileListContainer = styled.div`
+  display: flex;
+  align-items: center;
+  color: ${appSchemeText};
+  margin-left: 10px;
+`;
+
+const FileListWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+`;
+
+const FileListText = styled.div`
+  margin-left: 5px;
+`;
+
 export {
   Wrapper,
   UserContainer,
@@ -47,4 +75,9 @@ export {
   TimestampContainer,
   AvatarImage,
   UsernameContainer,
+  GistDescription,
+  FileListContainer,
+  FileListWrapper,
+  FileListText,
+  UpdatedDate,
 };

@@ -1,14 +1,12 @@
 import React from "react";
-import { ButtonText } from "./styles";
+import { GistActionButtonContainer, GistActionButtonText } from "./styles";
 
 const GistActionButton = ({ text, icon }) => {
   return (
-    <div>
-      <ButtonText>
-        {icon}
-        {text}
-      </ButtonText>
-    </div>
+    <GistActionButtonContainer>
+      {icon}
+      <GistActionButtonText>{text}</GistActionButtonText>
+    </GistActionButtonContainer>
   );
 };
 

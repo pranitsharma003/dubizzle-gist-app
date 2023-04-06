@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getPublicGists } from "../../services/gistService";
 import Gist from "../Gist";
-import dummyData from "../../dummy-data";
-import { Wrapper } from "./styles";
+// import dummyData from "../../dummy-data";
+import { Wrapper, Spinner } from "./styles";
 import { useSelector, useDispatch } from "react-redux";
-import { Save, GetList } from "../../redux/actions/gistListActions";
+import { Save } from "../../redux/actions/gistListActions";
 import { isUndefinedNullEmptyString } from "../../utils/common-utils";
 
 const GistList = () => {
@@ -31,7 +31,7 @@ const GistList = () => {
   return (
     <Wrapper>
       {loading ? (
-        <div>Loading...</div>
+        <Spinner></Spinner>
       ) : error ? (
         <div>Oops. Something went wrong.</div>
       ) : (
@@ -46,6 +46,8 @@ const GistList = () => {
             item.owner.login.toLowerCase().includes(searchText.toLowerCase())
           ) {
             return <Gist key={item.id} gist={item} />;
+          } else {
+            return null;
           }
         })
       )}

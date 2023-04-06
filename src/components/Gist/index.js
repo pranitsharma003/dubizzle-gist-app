@@ -8,6 +8,11 @@ import {
   TimestampContainer,
   AvatarImage,
   UsernameContainer,
+  GistDescription,
+  FileListContainer,
+  FileListWrapper,
+  FileListText,
+  UpdatedDate,
 } from "./styles";
 import {
   GoRepoForked,
@@ -59,19 +64,21 @@ const Gist = ({ gist }) => {
         <div>
           Created at: {new Date(gist.created_at).toLocaleDateString("en-GB")}
         </div>
-        <div>
+        <UpdatedDate>
           Last updated: {new Date(gist.updated_at).toLocaleDateString("en-GB")}
-        </div>
+        </UpdatedDate>
       </TimestampContainer>
-      <div>{gist.description}</div>
-      {Object.keys(gist.files).map((fileKey) => {
-        return (
-          <div>
-            <GoFile />
-            {gist.files[fileKey].filename}
-          </div>
-        );
-      })}
+      <GistDescription>{gist.description}</GistDescription>
+      <FileListWrapper>
+        {Object.keys(gist.files).map((fileKey) => {
+          return (
+            <FileListContainer>
+              <GoFile />
+              <FileListText>{gist.files[fileKey].filename}</FileListText>
+            </FileListContainer>
+          );
+        })}
+      </FileListWrapper>
     </Wrapper>
   );
 };
