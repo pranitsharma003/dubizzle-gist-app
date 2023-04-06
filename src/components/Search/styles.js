@@ -1,17 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import Octicon from "react-octicon";
-
-const Search = () => {
-  return (
-    <Wrapper>
-      <InputBox>
-        <Octicon name="search" />
-        <Input placeholder="Search Gists for the username" />
-      </InputBox>
-    </Wrapper>
-  );
-};
 
 const Wrapper = styled.div`
   padding: 8px;
@@ -38,4 +25,4 @@ const Input = styled.input`
   }
 `;
 
-export default Search;
+export { Wrapper, InputBox, Input };

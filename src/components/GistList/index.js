@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getPublicGists } from "../services/gistService";
-import Gist from "./Gist";
-import dummyData from "../dummy-data";
-import styled from "styled-components";
+import { getPublicGists } from "../../services/gistService";
+import Gist from "../Gist";
+import dummyData from "../../dummy-data";
+import { Wrapper } from "./styles";
 
 const GistList = () => {
   const [gistData, setGistData] = useState([]);
@@ -33,14 +33,5 @@ const GistList = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div`
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 600px;
-  margin: auto;
-`;
 
 export default GistList;
