@@ -13,6 +13,7 @@ import {
   FileListWrapper,
   FileListText,
   UpdatedDate,
+  BiDirectionalArrowRightWrapper,
 } from "./styles";
 import {
   GoRepoForked,
@@ -32,7 +33,9 @@ const Gist = ({ gist }) => {
       icon: (
         <>
           <GoChevronLeft />
-          <GoChevronRight />
+          <BiDirectionalArrowRightWrapper>
+            <GoChevronRight />
+          </BiDirectionalArrowRightWrapper>
         </>
       ),
     },

@@ -67,6 +67,13 @@ const FileListText = styled.div`
   margin-left: 5px;
 `;
 
+const BiDirectionalArrowRightWrapper = styled.div`
+  margin-left: -5px;
+  margin-right: -2px;
+  display: flex;
+  align-items: center;
+`;
+
 export {
   Wrapper,
   UserContainer,
@@ -80,4 +87,5 @@ export {
   FileListWrapper,
   FileListText,
   UpdatedDate,
+  BiDirectionalArrowRightWrapper,
 };
