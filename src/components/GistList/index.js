@@ -9,6 +9,7 @@ import { Save, GetList } from "../../redux/actions/gistListActions";
 const GistList = () => {
   const dispatch = useDispatch();
   const gistData = useSelector((state) => state.gistList);
+  const searchText = useSelector((state) => state.search);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -35,7 +36,16 @@ const GistList = () => {
       ) : (
         gistData &&
         gistData.map((item) => {
-          return <Gist key={item.id} gist={item} />;
+          if (!searchText || searchText === "") {
+            return <Gist key={item.id} gist={item} />;
+          } else if (
+            searchText &&
+            item.owner &&
+            item.owner.login &&
+            item.owner.login.toLowerCase().includes(searchText.toLowerCase())
+          ) {
+            return <Gist key={item.id} gist={item} />;
+          }
         })
       )}
     </Wrapper>

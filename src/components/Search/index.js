@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Octicon from "react-octicon";
+import { useDispatch, useSelector } from "react-redux";
 import { Wrapper, InputBox, Input } from "./styles";
+import { EnterText } from "../../redux/actions/searchActions";
 
 const Search = () => {
-  const [enteredText, setEnteredText] = useState("");
+  const enteredText = useSelector((state) => state.search);
+  const dispatch = useDispatch();
 
   return (
     <Wrapper>
@@ -13,7 +16,7 @@ const Search = () => {
           type="text"
           value={enteredText}
           placeholder="Search Gists for the username"
-          onChange={(e) => setEnteredText(e.target.value)}
+          onChange={(e) => dispatch(EnterText(e.target.value))}
         />
       </InputBox>
     </Wrapper>
