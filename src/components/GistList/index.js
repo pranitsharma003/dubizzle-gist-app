@@ -5,6 +5,7 @@ import dummyData from "../../dummy-data";
 import { Wrapper } from "./styles";
 import { useSelector, useDispatch } from "react-redux";
 import { Save, GetList } from "../../redux/actions/gistListActions";
+import { isUndefinedNullEmptyString } from "../../utils/common-utils";
 
 const GistList = () => {
   const dispatch = useDispatch();
@@ -36,12 +37,12 @@ const GistList = () => {
       ) : (
         gistData &&
         gistData.map((item) => {
-          if (!searchText || searchText === "") {
+          if (isUndefinedNullEmptyString(searchText)) {
             return <Gist key={item.id} gist={item} />;
           } else if (
-            searchText &&
-            item.owner &&
-            item.owner.login &&
+            !isUndefinedNullEmptyString(searchText) &&
+            !isUndefinedNullEmptyString(item.owner) &&
+            !isUndefinedNullEmptyString(item.owner.login) &&
             item.owner.login.toLowerCase().includes(searchText.toLowerCase())
           ) {
             return <Gist key={item.id} gist={item} />;
