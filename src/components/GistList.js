@@ -10,22 +10,26 @@ const GistList = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    // getPublicGists()
-    // .then((result) => {
-    //     if(result.data.length > 0){
-    //         setGistData(result.data);
-    //     }
-    //      setLoading(false);
-    // })
-    // .catch(err => setError(true));
-    setGistData(dummyData);
+    getPublicGists()
+      .then((result) => {
+        if (result.data.length > 0) {
+          setGistData(result.data);
+        }
+        setLoading(false);
+      })
+      .catch((err) => setError(true));
+    // setGistData(dummyData);
   }, []);
 
   return (
     <Wrapper>
-      {gistData.map((item) => {
-        return <Gist gist={item} />;
-      })}
+      {error ? (
+        <div>Oops. Something went wrong.</div>
+      ) : (
+        gistData.map((item) => {
+          return <Gist gist={item} />;
+        })
+      )}
     </Wrapper>
   );
 };

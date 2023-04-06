@@ -3,7 +3,9 @@ import styled from "styled-components";
 import GistActionButton from "./GistActionButton";
 
 const Gist = ({ gist }) => {
-  console.log(gist);
+  // console.log(gist);
+
+  // Adding Icons to an array, so adding icons in future is easier and straightforward
   const iconsArray = [
     { text: `${Object.keys(gist.files).length} files`, icon: "" },
     { text: "Fork", icon: "" },
