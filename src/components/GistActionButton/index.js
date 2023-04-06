@@ -1,10 +1,13 @@
 import React from "react";
 import { ButtonText } from "./styles";
 
-const GistActionButton = ({ text }) => {
+const GistActionButton = ({ text, icon }) => {
   return (
     <div>
-      <ButtonText>{text}</ButtonText>
+      <ButtonText>
+        {icon}
+        {text}
+      </ButtonText>
     </div>
   );
 };

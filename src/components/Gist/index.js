@@ -9,14 +9,31 @@ import {
   AvatarImage,
   UsernameContainer,
 } from "./styles";
+import {
+  GoRepoForked,
+  GoComment,
+  GoStar,
+  GoChevronLeft,
+  GoChevronRight,
+  GoFile,
+} from "react-icons/go";
 
 const Gist = ({ gist }) => {
+  // console.log(gist);
   // Adding Icons to an array, so adding icons in future is easier and straightforward
   const iconsArray = [
-    { text: `${Object.keys(gist.files).length} files`, icon: "" },
-    { text: "Fork", icon: "" },
-    { text: "Comments", icon: "" },
-    { text: "Stars", icon: "" },
+    {
+      text: `${Object.keys(gist.files).length} files`,
+      icon: (
+        <>
+          <GoChevronLeft />
+          <GoChevronRight />
+        </>
+      ),
+    },
+    { text: "Forks", icon: <GoRepoForked /> },
+    { text: "Comments", icon: <GoComment /> },
+    { text: "Stars", icon: <GoStar /> },
   ];
 
   return (
@@ -28,7 +45,7 @@ const Gist = ({ gist }) => {
         </ProfileContainer>
         <ButtonContainer>
           {iconsArray.map((item) => {
-            return <GistActionButton text={item.text} />;
+            return <GistActionButton text={item.text} icon={item.icon} />;
           })}
         </ButtonContainer>
       </UserContainer>
@@ -41,6 +58,14 @@ const Gist = ({ gist }) => {
         </div>
       </TimestampContainer>
       <div>{gist.description}</div>
+      {Object.keys(gist.files).map((fileKey) => {
+        return (
+          <div>
+            <GoFile />
+            {gist.files[fileKey].filename}
+          </div>
+        );
+      })}
     </Wrapper>
   );
 };

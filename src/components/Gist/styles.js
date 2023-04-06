@@ -4,7 +4,8 @@ import { appSchemeText } from "../../constants/styling-constants";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 15px;
+  border-bottom: 1px solid rgb(233, 236, 238);
+  padding: 15px 15px 40px 15px;
 `;
 
 const UserContainer = styled.div`
