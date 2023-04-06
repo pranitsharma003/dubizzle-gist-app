@@ -33,8 +33,12 @@ const Gist = ({ gist }) => {
         </ButtonContainer>
       </UserContainer>
       <TimestampContainer>
-        <div>Created at: {gist.created_at}</div>
-        <div>Last updated: {gist.updated_at}</div>
+        <div>
+          Created at: {new Date(gist.created_at).toLocaleDateString("en-GB")}
+        </div>
+        <div>
+          Last updated: {new Date(gist.updated_at).toLocaleDateString("en-GB")}
+        </div>
       </TimestampContainer>
       <div>{gist.description}</div>
     </Wrapper>
