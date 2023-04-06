@@ -45,7 +45,13 @@ const Gist = ({ gist }) => {
         </ProfileContainer>
         <ButtonContainer>
           {iconsArray.map((item) => {
-            return <GistActionButton text={item.text} icon={item.icon} />;
+            return (
+              <GistActionButton
+                key={item.text}
+                text={item.text}
+                icon={item.icon}
+              />
+            );
           })}
         </ButtonContainer>
       </UserContainer>

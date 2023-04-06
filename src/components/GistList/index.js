@@ -3,31 +3,39 @@ import { getPublicGists } from "../../services/gistService";
 import Gist from "../Gist";
 import dummyData from "../../dummy-data";
 import { Wrapper } from "./styles";
+import { useSelector, useDispatch } from "react-redux";
+import { Save, GetList } from "../../redux/reducers/gistList";
 
 const GistList = () => {
-  const [gistData, setGistData] = useState([]);
+  const dispatch = useDispatch();
+  const gistData = useSelector((state) => state.gistList);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    getPublicGists()
-      .then((result) => {
-        if (result.data.length > 0) {
-          setGistData(result.data);
-        }
-        setLoading(false);
-      })
-      .catch((err) => setError(true));
-    // setGistData(dummyData);
-  }, []);
+    if (gistData && gistData.length < 1) {
+      setLoading(true);
+      getPublicGists()
+        .then((result) => {
+          if (result.data.length > 0) {
+            dispatch(Save(result.data));
+          }
+          setLoading(false);
+        })
+        .catch((err) => setError(true), setLoading(false));
+    }
+  }, [gistData, dispatch]);
 
   return (
     <Wrapper>
-      {error ? (
+      {loading ? (
+        <div>Loading...</div>
+      ) : error ? (
         <div>Oops. Something went wrong.</div>
       ) : (
+        gistData &&
         gistData.map((item) => {
-          return <Gist gist={item} />;
+          return <Gist key={item.id} gist={item} />;
         })
       )}
     </Wrapper>
