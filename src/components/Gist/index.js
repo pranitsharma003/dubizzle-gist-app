@@ -38,10 +38,11 @@ const Gist = ({ gist }) => {
           </BiDirectionalArrowRightWrapper>
         </>
       ),
+      url: "",
     },
-    { text: "Forks", icon: <GoRepoForked /> },
-    { text: "Comments", icon: <GoComment /> },
-    { text: "Stars", icon: <GoStar /> },
+    { text: "Forks", icon: <GoRepoForked />, url: gist.forks_url },
+    { text: "Comments", icon: <GoComment />, url: gist.comments_url },
+    { text: "Stars", icon: <GoStar />, url: gist.owner.starred_url },
   ];
 
   return (
@@ -58,6 +59,7 @@ const Gist = ({ gist }) => {
                 key={item.text}
                 text={item.text}
                 icon={item.icon}
+                url={item.url}
               />
             );
           })}
@@ -75,9 +77,11 @@ const Gist = ({ gist }) => {
       <FileListWrapper>
         {Object.keys(gist.files).map((fileKey) => {
           return (
-            <FileListContainer>
+            <FileListContainer key={fileKey}>
               <GoFile />
-              <FileListText>{gist.files[fileKey].filename}</FileListText>
+              <FileListText key={fileKey}>
+                {gist.files[fileKey].filename}
+              </FileListText>
             </FileListContainer>
           );
         })}
