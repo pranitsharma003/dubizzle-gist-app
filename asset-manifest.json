@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/dubizzle-gist-app/static/js/main.9e4fa0f8.chunk.js",
+    "main.js.map": "/dubizzle-gist-app/static/js/main.9e4fa0f8.chunk.js.map",
+    "runtime-main.js": "/dubizzle-gist-app/static/js/runtime-main.05b776b6.js",
+    "runtime-main.js.map": "/dubizzle-gist-app/static/js/runtime-main.05b776b6.js.map",
+    "static/css/2.9252eca6.chunk.css": "/dubizzle-gist-app/static/css/2.9252eca6.chunk.css",
+    "static/js/2.da770f57.chunk.js": "/dubizzle-gist-app/static/js/2.da770f57.chunk.js",
+    "static/js/2.da770f57.chunk.js.map": "/dubizzle-gist-app/static/js/2.da770f57.chunk.js.map",
+    "index.html": "/dubizzle-gist-app/index.html",
+    "static/css/2.9252eca6.chunk.css.map": "/dubizzle-gist-app/static/css/2.9252eca6.chunk.css.map",
+    "static/js/2.da770f57.chunk.js.LICENSE.txt": "/dubizzle-gist-app/static/js/2.da770f57.chunk.js.LICENSE.txt",
+    "static/media/octicons.css": "/dubizzle-gist-app/static/media/octicons.f9ced0fc.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.05b776b6.js",
+    "static/css/2.9252eca6.chunk.css",
+    "static/js/2.da770f57.chunk.js",
+    "static/js/main.9e4fa0f8.chunk.js"
+  ]
+}
